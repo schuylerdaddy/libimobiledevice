@@ -1,3 +1,14 @@
+configurations {
+    Toolset { 
+        key : "PlatformToolset"; 
+        choices: { v140 };  
+        // Explicitly Not including pivot variants:  "WindowsKernelModeDriver8.0", "WindowsApplicationForDrivers8.0", "WindowsUserModeDriver8.0" 
+
+        // We're normalizing out the concept of the v140 platform -- Overloading the $(PlatformToolset) variable for additional pivots was a dumb idea.
+        v140.condition = "( $(PlatformToolset.ToLower().IndexOf('v140')) > -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' )";
+    };
+}
+
 nuget{
     nuspec{
         id = libimobiledevice;
@@ -22,28 +33,28 @@ nuget{
 		"include\libimobiledevice\*.h";
 	} 
 
-	[x86,v120,debug] {
+	[x86,v140,debug] {
             lib: Win32\Debug\libimobiledevice.lib;
             bin: Win32\Debug\libimobiledevice.dll;
-            symbols: Win32\Debug\vc120.pdb;
+            symbols: Win32\Debug\libimobiledevice.pdb;
         }
 
-	[x86,v120,release] {
+	[x86,v140,release] {
             lib: Win32\Release\libimobiledevice.lib;
             bin: Win32\Release\libimobiledevice.dll;
-            symbols: Win32\Release\vc120.pdb;
+            symbols: Win32\Release\libimobiledevice.pdb;
         }
 
-	[x64,v120,debug] {
+	[x64,v140,debug] {
             lib: x64\Debug\libimobiledevice.lib;
             bin: x64\Debug\libimobiledevice.dll;
-            symbols: x64\Debug\vc120.pdb;
+            symbols: x64\Debug\libimobiledevice.pdb;
         }
 
-	[x64,v120,release] {
+	[x64,v140,release] {
             lib: x64\Release\libimobiledevice.lib;
             bin: x64\Release\libimobiledevice.dll;
-            symbols: x64\Release\vc120.pdb;
+            symbols: x64\Release\libimobiledevice.pdb;
         }
     }
 }
