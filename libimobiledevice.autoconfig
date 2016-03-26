@@ -35,25 +35,25 @@ nuget{
 
 	[x86,v140,debug] {
             lib: Win32\Debug\libimobiledevice.lib;
-            bin: Win32\Debug\libimobiledevice.dll;
+            bin: { "Win32\Debug\libimobiledevice.dll", "Win32\Debug\*.exe" };
             symbols: Win32\Debug\libimobiledevice.pdb;
         }
 
 	[x86,v140,release] {
             lib: Win32\Release\libimobiledevice.lib;
-            bin: Win32\Release\libimobiledevice.dll;
+            bin: { "Win32\Release\libimobiledevice.dll", "Win32\Release\*.exe" };
             symbols: Win32\Release\libimobiledevice.pdb;
         }
 
 	[x64,v140,debug] {
             lib: x64\Debug\libimobiledevice.lib;
-            bin: x64\Debug\libimobiledevice.dll;
+            bin: { "x64\Debug\libimobiledevice.dll", "x64\Debug\*.exe" };
             symbols: x64\Debug\libimobiledevice.pdb;
         }
 
 	[x64,v140,release] {
             lib: x64\Release\libimobiledevice.lib;
-            bin: x64\Release\libimobiledevice.dll;
+            bin: { "x64\Release\libimobiledevice.dll", "x64\Release\*.exe" };
             symbols: x64\Release\libimobiledevice.pdb;
         }
     }

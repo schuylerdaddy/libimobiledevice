@@ -43,7 +43,6 @@
 #include "windows.h"
 #endif
 
-#include <usbmuxd.h>
 #ifdef HAVE_OPENSSL
 #include <openssl/pem.h>
 #include <openssl/rsa.h>

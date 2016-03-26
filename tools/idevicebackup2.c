@@ -24,12 +24,15 @@
 #include <config.h>
 #endif
 
+#ifdef WIN32
+#include <windows.h>
+#endif
+
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
 #include <stdlib.h>
 #include <signal.h>
-#include <unistd.h>
 #include <dirent.h>
 #include <libgen.h>
 #include <ctype.h>
@@ -48,7 +51,6 @@
 #define LOCK_WAIT 200000
 
 #ifdef WIN32
-#include <windows.h>
 #include <conio.h>
 #define sleep(x) Sleep(x*1000)
 #else
@@ -56,6 +58,19 @@
 #include <sys/statvfs.h>
 #endif
 #include <sys/stat.h>
+
+#ifdef _MSC_VER
+void usleep(DWORD waitTime) {
+    LARGE_INTEGER perfCnt, start, now;
+
+    QueryPerformanceFrequency(&perfCnt);
+    QueryPerformanceCounter(&start);
+
+    do {
+        QueryPerformanceCounter((LARGE_INTEGER*)&now);
+    } while ((now.QuadPart - start.QuadPart) / (float)(perfCnt.QuadPart) * 1000 * 1000 < waitTime);
+}
+#endif
 
 #define CODE_SUCCESS 0x00
 #define CODE_ERROR_LOCAL 0x06
@@ -163,7 +178,7 @@ static void mobilebackup_afc_get_file_contents(afc_client_t afc, const char *fil
 static int __mkdir(const char* path, int mode)
 {
 #ifdef WIN32
-	return mkdir(path);
+	return CreateDirectory(path, NULL);
 #else
 	return mkdir(path, mode);
 #endif
