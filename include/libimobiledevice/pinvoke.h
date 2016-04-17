@@ -39,10 +39,20 @@ typedef enum {
 * Frees a string that was previously allocated by libimobiledevice.
 *
 * @param string The string to free.
-
+*
 * @return Always returns PINVOKE_E_SUCCESS.
 */
 LIBIMOBILEDEVICE_API_MSC pinvoke_error_t pinvoke_free_string(char *string);
+
+/**
+* Gets the size of a string that was previously allocated by libimobiledevice.
+*
+* @param string The string of which to get its size.
+* @param length The length of the string, in bytes.
+*
+* @return Always returns PINVOKE_E_SUCCESS.
+*/
+LIBIMOBILEDEVICE_API_MSC pinvoke_error_t pinvoke_get_string_length(const char *string, uint64_t *length);
 
 #ifdef __cplusplus
 }
