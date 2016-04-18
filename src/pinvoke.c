@@ -26,9 +26,11 @@
 LIBIMOBILEDEVICE_API pinvoke_error_t pinvoke_free_string(char *string)
 {
     free(string);
+    return PINVOKE_E_SUCCESS;
 }
 
 LIBIMOBILEDEVICE_API pinvoke_error_t pinvoke_get_string_length(const char *string, uint64_t *length)
 {
     *length = strlen(string);
+    return PINVOKE_E_SUCCESS;
 }
