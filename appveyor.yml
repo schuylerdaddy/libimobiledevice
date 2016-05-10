@@ -14,6 +14,10 @@ on_success:
   - cmd: appveyor PushArtifact libimobiledevice.1.2.0.%APPVEYOR_BUILD_NUMBER%.nupkg
   - cmd: appveyor PushArtifact libimobiledevice.symbols.1.2.0.%APPVEYOR_BUILD_NUMBER%.nupkg
   - cmd: appveyor PushArtifact libimobiledevice.redist.1.2.0.%APPVEYOR_BUILD_NUMBER%.nupkg
+  - cmd: 7z a -tzip "libimobiledevice-%APPVEYOR_BUILD_NUMBER%-windows-x86.zip" .\Win32\Release\*.exe .\Win32\Release\*.dll
+  - cmd: 7z a -tzip "libimobiledevice-%APPVEYOR_BUILD_NUMBER%-windows-x64.zip" .\x64\Release\*.exe .\x64\Release\*.dll
+  - cmd: appveyor PushArtifact libimobiledevice-%APPVEYOR_BUILD_NUMBER%-windows-x86.zip
+  - cmd: appveyor PushArtifact libimobiledevice-%APPVEYOR_BUILD_NUMBER%-windows-x64.zip
 
 nuget:
   project_feed: true
