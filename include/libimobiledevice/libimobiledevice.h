@@ -85,6 +85,14 @@ typedef void (*idevice_event_cb_t) (const idevice_event_t *event, void *user_dat
 /* functions */
 
 /**
+  * Sets the callback to invoke when writing out debug messages. If this callback is set, messages
+  * will be written to this callback instead of the standard output.
+  *
+  * @param callback The callback which will receive the debug messages. Set to NULL to redirect to stdout.
+  */
+LIBIMOBILEDEVICE_API void idevice_set_debug_callback(idevice_debug_cb_t callback);
+
+/**
  * Set the level of debugging.
  *
  * @param level Set to 0 for no debug output or 1 to enable debug output.
