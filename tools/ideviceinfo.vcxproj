@@ -26,12 +26,12 @@
     <ClInclude Include="config.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\libimobiledevice.vcxproj">
-      <Project>{ee16e7f2-ac27-4e30-ab22-b02a9c2380b4}</Project>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\imobiledevice.vcxproj">
+      <Project>{ee16e7f2-ac27-4e30-ab22-b02a9c2380b4}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{614CF6B8-7C52-4ADC-ACA6-77099F945D82}</ProjectGuid>

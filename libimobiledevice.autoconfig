@@ -34,27 +34,27 @@ nuget{
 	} 
 
 	[x86,v140,debug] {
-            lib: Win32\Debug\libimobiledevice.lib;
-            bin: { "Win32\Debug\libimobiledevice.dll", "Win32\Debug\*.exe" };
-            symbols: Win32\Debug\libimobiledevice.pdb;
+            lib: Win32\Debug\imobiledevice.lib;
+            bin: { "Win32\Debug\imobiledevice.dll", "Win32\Debug\*.exe" };
+            symbols: Win32\Debug\imobiledevice.pdb;
         }
 
 	[x86,v140,release] {
-            lib: Win32\Release\libimobiledevice.lib;
-            bin: { "Win32\Release\libimobiledevice.dll", "Win32\Release\*.exe" };
-            symbols: Win32\Release\libimobiledevice.pdb;
+            lib: Win32\Release\imobiledevice.lib;
+            bin: { "Win32\Release\imobiledevice.dll", "Win32\Release\*.exe" };
+            symbols: Win32\Release\imobiledevice.pdb;
         }
 
 	[x64,v140,debug] {
-            lib: x64\Debug\libimobiledevice.lib;
-            bin: { "x64\Debug\libimobiledevice.dll", "x64\Debug\*.exe" };
-            symbols: x64\Debug\libimobiledevice.pdb;
+            lib: x64\Debug\imobiledevice.lib;
+            bin: { "x64\Debug\imobiledevice.dll", "x64\Debug\*.exe" };
+            symbols: x64\Debug\imobiledevice.pdb;
         }
 
 	[x64,v140,release] {
-            lib: x64\Release\libimobiledevice.lib;
-            bin: { "x64\Release\libimobiledevice.dll", "x64\Release\*.exe" };
-            symbols: x64\Release\libimobiledevice.pdb;
+            lib: x64\Release\imobiledevice.lib;
+            bin: { "x64\Release\imobiledevice.dll", "x64\Release\*.exe" };
+            symbols: x64\Release\imobiledevice.pdb;
         }
     }
 }
