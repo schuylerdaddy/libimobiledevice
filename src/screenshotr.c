@@ -160,4 +160,5 @@ leave:
 LIBIMOBILEDEVICE_API screenshotr_error_t screenshotr_screenshot_free(char **imgdata)
 {
     free(imgdata);
+	return SCREENSHOTR_E_SUCCESS;
 }
