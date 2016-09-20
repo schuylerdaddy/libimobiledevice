@@ -24,6 +24,7 @@
     <ClCompile Include="idevicename.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\resource.h" />
     <ClInclude Include="config.h" />
   </ItemGroup>
   <ItemGroup>
@@ -33,6 +34,9 @@
     <ProjectReference Include="..\imobiledevice.vcxproj">
       <Project>{ee16e7f2-ac27-4e30-ab22-b02a9c2380b4}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Resource.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{06A90F9F-57CA-430B-B2E4-86D82D21EA74}</ProjectGuid>

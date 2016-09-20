@@ -176,6 +176,7 @@
     <ClInclude Include="include\libimobiledevice\service.h" />
     <ClInclude Include="include\libimobiledevice\syslog_relay.h" />
     <ClInclude Include="include\libimobiledevice\webinspector.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="src\afc.h" />
     <ClInclude Include="src\debugserver.h" />
     <ClInclude Include="src\device_link_service.h" />
@@ -284,6 +285,9 @@
     <DynamicLibraries Include="packages\libxml2.redist.2.7.8.7\build\native\bin\v110\$(Platform)\Release\dynamic\cdecl\libxml2.dll" />
     <DynamicLibraries Include="packages\zlib.redist.1.2.8.7\build\native\bin\v120\$(Platform)\Release\dynamic\cdecl\zlib.dll" />
     <DynamicLibraries Include="packages\libiconv.redist.1.14.0.11\build\native\bin\v110\$(Platform)\Release\dynamic\cdecl\libiconv.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc" />
   </ItemGroup>
   <Target Name="AfterBuild">
     <Copy SourceFiles="@(DynamicLibraries)" DestinationFolder="$(OutDir)" />
